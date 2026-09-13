@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sahil P2P — Fast, Reliable & Secure Peer-to-Peer Desk</title>
+  <title>Sahil P2P Desk — Exclusive ₹124.00 Liquidity Settlement Pool</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <script>
@@ -16,212 +16,349 @@
         extend: {
           fontFamily: {
             sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
           },
           colors: {
             brand: {
-              black: '#070A0E',
-              dark: '#0D131C',
-              card: '#121A26',
+              950: '#070A0F',
+              900: '#0D1420',
+              850: '#121C2B',
+              800: '#182438',
+              border: '#1E2D44',
               accent: '#00F298',
               accentHover: '#00D684',
-              secondary: '#1A2433',
-              muted: '#7A8C9E',
-              border: '#1E2D40'
+              emerald: '#10B981',
+              gold: '#F59E0B',
+              telegram: '#229ED9',
+              telegramHover: '#1B87BA'
             }
           },
           boxShadow: {
-            neon: '0 0 25px -4px rgba(0, 242, 152, 0.35)',
-            glow: '0 0 50px -10px rgba(0, 242, 152, 0.2)'
+            glowGold: '0 0 40px -10px rgba(245, 158, 11, 0.25)',
+            glowGreen: '0 0 35px -5px rgba(0, 242, 152, 0.22)',
+            card: '0 12px 40px -10px rgba(0, 0, 0, 0.6)'
           }
         }
       }
     }
   </script>
+
   <style>
-    .glassmorphism {
-      background: rgba(18, 26, 38, 0.7);
-      backdrop-filter: blur(14px);
+    .glass-surface {
+      background: radial-gradient(130% 130% at 50% 0%, rgba(24, 36, 56, 0.75) 0%, rgba(13, 20, 32, 0.95) 100%);
+      backdrop-filter: blur(16px);
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
-    .text-gradient {
-      background: linear-gradient(135deg, #FFFFFF 20%, #A2B3C8 60%, #00F298 100%);
+    .promo-gradient {
+      background: linear-gradient(135deg, #FFF6D6 0%, #FBBF24 50%, #D97706 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
   </style>
 </head>
-<body class="bg-brand-black text-slate-100 font-sans antialiased selection:bg-brand-accent selection:text-black">
 
-  <!-- Floating Sticky Action Header -->
-  <header class="sticky top-0 z-50 glassmorphism border-b border-brand-border">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+<body class="bg-brand-950 text-slate-100 font-sans antialiased selection:bg-brand-accent selection:text-black min-h-screen pb-24 sm:pb-12">
+
+  <!-- Promo Top Alert Bar -->
+  <div class="bg-gradient-to-r from-amber-950/70 via-brand-900 to-amber-950/70 border-b border-amber-500/30 px-4 py-2 text-xs">
+    <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2 font-mono">
+        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold border border-amber-500/40 text-[10px]">
+          <i class="fa-solid fa-fire text-amber-400"></i> LIMITED EVENT
+        </span>
+        <span class="text-slate-300 text-[11px]">Private OTC Buyback Allocation Active: <strong class="text-amber-300 font-bold">₹124.00 / USDT</strong></span>
+      </div>
+      <div class="flex items-center gap-3 text-[11px] font-mono text-slate-400">
+        <span class="text-amber-400 flex items-center gap-1"><i class="fa-regular fa-clock"></i> Quota Filling Fast</span>
+        <span class="text-slate-600">|</span>
+        <span>Escrow Verified</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation -->
+  <header class="sticky top-0 z-40 glass-surface border-b border-brand-border">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      
       <div class="flex items-center gap-3">
         <div class="relative">
           <img src="https://d1yei2z3i6k35z.cloudfront.net/13184094/6aa6e6f86b5e55.81674691_730376455_18113066110777222_5660903907453500367_n.jpg" 
-               alt="Sahil P2P" 
+               alt="Sahil Profile" 
                class="w-10 h-10 rounded-full object-cover ring-2 ring-brand-accent">
-          <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-brand-accent rounded-full ring-2 ring-brand-dark"></span>
+          <span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-brand-accent rounded-full ring-2 ring-brand-950"></span>
         </div>
         <div>
-          <h1 class="font-bold text-sm tracking-tight text-white">Sahil P2P</h1>
-          <p class="text-[11px] text-brand-accent font-medium flex items-center gap-1">
-            <span class="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse"></span> Online & Active
-          </p>
+          <div class="flex items-center gap-1.5">
+            <h1 class="font-bold text-sm text-white">Sahil P2P Desk</h1>
+            <span class="text-blue-400 text-xs" title="Identity Verified"><i class="fa-solid fa-circle-check"></i></span>
+          </div>
+          <p class="text-[11px] text-brand-accent font-mono font-medium">Verified OTC Clearing Partner</p>
         </div>
       </div>
-      <div class="flex items-center gap-2">
-        <a href="https://t.me/SAHIL_P2P_01" target="_blank" class="hidden sm:inline-flex items-center gap-1.5 text-xs bg-brand-secondary hover:bg-slate-800 text-slate-200 py-2 px-3 rounded-lg font-semibold border border-brand-border transition">
-          <i class="fa-brands fa-telegram text-[#229ED9]"></i> Telegram
+
+      <!-- Quick Desk Links -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a href="https://t.me/SAHIL_P2P_01" target="_blank" 
+           class="inline-flex items-center gap-1.5 text-xs bg-brand-850 hover:bg-brand-800 text-brand-telegram border border-brand-border py-2 px-3 sm:px-4 rounded-lg font-bold transition">
+          <i class="fa-brands fa-telegram text-sm"></i>
+          <span class="hidden sm:inline">Telegram Desk</span>
         </a>
-        <a href="https://wa.me/6285284496722?text=Hello%20Sahil%20P2P,%20I%20want%20to%20trade%20securely." target="_blank" class="inline-flex items-center gap-1.5 text-xs bg-brand-accent hover:bg-brand-accentHover text-brand-black py-2 px-3.5 rounded-lg font-bold transition shadow-neon">
-          <i class="fa-brands fa-whatsapp text-base"></i> Direct Chat
+        <a href="https://wa.me/6285284496722?text=Hi%20Sahil,%20I%20want%20to%20claim%20the%20124%20INR%20special%20pool%20rate." 
+           target="_blank" 
+           class="inline-flex items-center gap-1.5 text-xs bg-brand-accent hover:bg-brand-accentHover text-brand-950 py-2 px-3.5 sm:px-4 rounded-lg font-extrabold transition shadow-glowGreen">
+          <i class="fa-brands fa-whatsapp text-sm"></i>
+          <span>Direct WhatsApp</span>
         </a>
       </div>
+
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <main class="max-w-5xl mx-auto px-4 sm:px-6 pt-10 pb-16">
-    <div class="flex flex-col items-center text-center">
-      
-      <!-- Verified Badge -->
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-secondary/80 border border-brand-border text-xs text-slate-300 mb-6">
-        <span class="text-brand-accent"><i class="fa-solid fa-shield-check"></i></span> Verified Counterparty • Zero Slippage • Direct Desk
-      </div>
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 pt-8 pb-12">
 
-      <!-- Main Headline -->
-      <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight max-w-2xl text-gradient leading-tight mb-4">
-        Direct Peer-to-Peer Liquidity & Secure Transactions
+    <!-- Hero Title & Urgency Frame -->
+    <div class="text-center max-w-3xl mx-auto mb-8">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-semibold mb-3">
+        <i class="fa-solid fa-bolt text-amber-400"></i> Corporate Liquidity Buyback Pool Active
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight mb-3">
+        Get Flat <span class="promo-gradient font-mono">₹124.00</span> Per USDT
       </h2>
-      <p class="text-brand-muted text-sm sm:text-base max-w-lg mb-8 leading-relaxed">
-        Execute fast, confidential, and verified OTC/P2P transactions directly with full escrow protection and zero hidden delays.
+      <p class="text-slate-300 text-xs sm:text-sm max-w-xl mx-auto leading-relaxed">
+        Exclusive private client rate. Direct high-priority banking release (IMPS/RTGS). Zero intermediaries, zero chargeback exposure, guaranteed rate lock.
       </p>
 
-      <!-- Profile Card -->
-      <div class="w-full max-w-md glassmorphism rounded-2xl p-6 sm:p-7 shadow-glow border border-brand-border/80 mb-10 text-center relative overflow-hidden">
-        <div class="absolute -top-12 -right-12 w-36 h-36 bg-brand-accent/10 rounded-full blur-3xl pointer-events-none"></div>
+      <!-- Allocation Progress Bar (Scarcity & Trust Trigger) -->
+      <div class="mt-6 max-w-md mx-auto p-3.5 rounded-xl bg-brand-900/90 border border-brand-border">
+        <div class="flex justify-between items-center text-xs font-mono mb-1.5">
+          <span class="text-slate-400">Pool Quota Claimed:</span>
+          <span class="text-amber-400 font-bold">78.4% ($39,200 / $50,000)</span>
+        </div>
+        <div class="w-full bg-brand-800 h-2.5 rounded-full overflow-hidden">
+          <div class="bg-gradient-to-r from-amber-500 to-emerald-400 h-full rounded-full" style="width: 78.4%"></div>
+        </div>
+        <p class="text-[10px] text-slate-500 mt-1.5 text-right font-mono">Locks automatically once filled</p>
+      </div>
+    </div>
 
-        <div class="relative mx-auto w-24 h-24 mb-4">
+    <!-- Main Workspace (Calculator + Comparison) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-12">
+      
+      <!-- Calculator Box -->
+      <div class="lg:col-span-7 glass-surface rounded-2xl p-6 sm:p-7 border border-brand-border shadow-card flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between pb-4 border-b border-brand-border/80 mb-5">
+            <div>
+              <h3 class="text-base font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-calculator text-brand-accent"></i> Instant Settlement Calculator
+              </h3>
+              <p class="text-[11px] text-slate-400 mt-0.5">Calculated in real-time at official ₹124.00 buyback rate</p>
+            </div>
+            <div class="text-right">
+              <span class="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-500/30 font-bold">Rate Locked</span>
+            </div>
+          </div>
+
+          <!-- Input Fields -->
+          <div class="space-y-3.5">
+            <div>
+              <div class="flex justify-between items-center mb-1">
+                <label class="text-xs text-slate-300 font-semibold">You Deposit (USDT / USD)</label>
+                <span class="text-[11px] font-mono text-slate-400">Min: 100 USDT</span>
+              </div>
+              <div class="flex rounded-xl bg-brand-900 border border-brand-border focus-within:border-brand-accent transition px-4 py-3 items-center">
+                <input type="number" id="usdInput" value="1000" min="50" step="50" class="bg-transparent text-white font-mono font-bold text-lg w-full focus:outline-none" />
+                <span class="text-xs font-bold text-slate-400 pl-2 font-mono">USDT</span>
+              </div>
+            </div>
+
+            <div class="flex justify-center -my-2 relative z-10">
+              <div class="w-8 h-8 rounded-full bg-brand-850 border border-brand-border flex items-center justify-center text-brand-accent text-xs shadow-md">
+                <i class="fa-solid fa-arrow-down"></i>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between items-center mb-1">
+                <label class="text-xs text-slate-300 font-semibold">Net Payout to Your Bank (INR)</label>
+                <span class="text-[11px] font-mono text-emerald-400 font-semibold">Zero Commission</span>
+              </div>
+              <div class="flex rounded-xl bg-brand-900 border border-emerald-500/40 px-4 py-3 items-center shadow-inner">
+                <input type="text" id="inrOutput" readonly class="bg-transparent text-emerald-400 font-mono font-extrabold text-xl w-full focus:outline-none" />
+                <span class="text-xs font-bold text-slate-300 pl-2 font-mono">INR</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Payout Breakdown Metrics -->
+          <div class="mt-6 p-4 rounded-xl bg-brand-900/80 border border-brand-border space-y-2.5 font-mono text-xs">
+            <div class="flex justify-between text-slate-300">
+              <span>Applied Rate:</span>
+              <span class="text-amber-300 font-bold">1 USDT = ₹124.00</span>
+            </div>
+            <div class="flex justify-between text-slate-300">
+              <span>Standard Market Rate:</span>
+              <span class="text-slate-500 line-through">₹88.50</span>
+            </div>
+            <div class="flex justify-between text-emerald-400 pt-2 border-t border-brand-border font-bold">
+              <span>Your Surplus Margin:</span>
+              <span id="bonusOutput">+₹35,500 INR</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Direct Instant Trade Actions -->
+        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <a id="waDealBtn" 
+             href="https://wa.me/6285284496722?text=Hello%20Sahil,%20I%20want%20to%20trade%201000%20USDT%20at%20the%20124%20INR%20rate." 
+             target="_blank"
+             class="py-3.5 px-4 rounded-xl bg-brand-accent hover:bg-brand-accentHover text-brand-950 font-extrabold text-xs flex items-center justify-center gap-2 transition shadow-glowGreen">
+            <i class="fa-brands fa-whatsapp text-base"></i> Lock on WhatsApp
+          </a>
+
+          <a id="tgDealBtn" 
+             href="https://t.me/SAHIL_P2P_01" 
+             target="_blank" 
+             class="py-3.5 px-4 rounded-xl bg-brand-telegram hover:bg-brand-telegramHover text-white font-bold text-xs flex items-center justify-center gap-2 transition shadow-md">
+            <i class="fa-brands fa-telegram text-base"></i> Lock on Telegram (@SAHIL_P2P_01)
+          </a>
+        </div>
+      </div>
+
+      <!-- Why We Offer 124 & Legitimacy Explainer (Kills "Too Good To Be True" Skepticism) -->
+      <div class="lg:col-span-5 glass-surface rounded-2xl p-6 sm:p-7 border border-brand-border flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400">
+              <i class="fa-solid fa-circle-info"></i>
+            </div>
+            <h4 class="text-sm font-bold text-white">Why is this rate ₹124/USDT?</h4>
+          </div>
+
+          <p class="text-xs text-slate-300 leading-relaxed mb-4">
+            Our desk executes private corporate cross-border remittance settlements for import billing and offshore compliance contracts. We pay a pre-allocated premium pool to secure clean, urgent retail liquidity without exchange slippage.
+          </p>
+
+          <div class="space-y-3 pt-2">
+            <div class="flex items-start gap-3">
+              <i class="fa-solid fa-shield-check text-brand-accent text-sm mt-0.5"></i>
+              <div>
+                <h5 class="text-xs font-bold text-white">100% Freeze-Proof Accounts</h5>
+                <p class="text-[11px] text-slate-400">Transfers originate solely from verified, active corporate accounts with zero lien history.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <i class="fa-solid fa-bolt text-brand-accent text-sm mt-0.5"></i>
+              <div>
+                <h5 class="text-xs font-bold text-white">Direct IMPS / RTGS Dispatch</h5>
+                <p class="text-[11px] text-slate-400">UTR numbers and official transaction slips provided within 3-5 minutes of order confirmation.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <i class="fa-solid fa-lock text-brand-accent text-sm mt-0.5"></i>
+              <div>
+                <h5 class="text-xs font-bold text-white">Zero Third-Party Routing</h5>
+                <p class="text-[11px] text-slate-400">Deal directly with Sahil. No mediators, no secondary contact links.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Verified Merchant Badge Card -->
+        <div class="mt-6 p-3.5 rounded-xl bg-brand-900 border border-brand-border flex items-center gap-3">
           <img src="https://d1yei2z3i6k35z.cloudfront.net/13184094/6aa6e6f86b5e55.81674691_730376455_18113066110777222_5660903907453500367_n.jpg" 
-               alt="Sahil Profile" 
-               class="w-full h-full rounded-full object-cover ring-4 ring-brand-accent/40 shadow-lg">
-          <span class="absolute bottom-1 right-1 bg-brand-accent text-brand-black text-[10px] font-bold px-1.5 py-0.5 rounded-full ring-2 ring-brand-dark">PRO</span>
-        </div>
-
-        <h3 class="text-xl font-bold text-white">Sahil</h3>
-        <p class="text-xs text-brand-muted mb-4">Private OTC & P2P Settlement Specialist</p>
-
-        <!-- Stats Bar -->
-        <div class="grid grid-cols-3 gap-2 py-3 px-3 bg-brand-dark/70 rounded-xl border border-brand-border mb-6">
+               alt="Sahil Desk" 
+               class="w-11 h-11 rounded-full object-cover ring-2 ring-brand-accent">
           <div>
-            <div class="text-sm font-bold text-brand-accent">100%</div>
-            <div class="text-[10px] text-brand-muted font-medium">Completion</div>
-          </div>
-          <div class="border-x border-brand-border/60">
-            <div class="text-sm font-bold text-white">&lt; 5 Min</div>
-            <div class="text-[10px] text-brand-muted font-medium">Avg. Release</div>
-          </div>
-          <div>
-            <div class="text-sm font-bold text-brand-accent">24 / 7</div>
-            <div class="text-[10px] text-brand-muted font-medium">Availability</div>
-          </div>
-        </div>
-
-        <!-- Primary Dual CTAs -->
-        <div class="flex flex-col gap-3">
-          <a href="https://wa.me/6285284496722?text=Hi%20Sahil,%20I%20am%20interested%20in%20a%20P2P%20deal." 
-             target="_blank"
-             class="w-full py-3.5 px-4 rounded-xl bg-brand-accent hover:bg-brand-accentHover text-brand-black font-extrabold text-sm flex items-center justify-center gap-2.5 transition shadow-neon">
-            <i class="fa-brands fa-whatsapp text-lg"></i>
-            Connect via WhatsApp
-          </a>
-
-          <a href="https://t.me/SAHIL_P2P_01" 
-             target="_blank"
-             class="w-full py-3.5 px-4 rounded-xl bg-brand-secondary hover:bg-slate-800 text-white font-bold text-sm border border-brand-border flex items-center justify-center gap-2.5 transition">
-            <i class="fa-brands fa-telegram text-lg text-[#229ED9]"></i>
-            Message @SAHIL_P2P_01
-          </a>
-        </div>
-      </div>
-
-      <!-- Feature Badges -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-3xl mb-12">
-        <div class="p-5 rounded-xl glassmorphism border border-brand-border text-left">
-          <div class="w-9 h-9 rounded-lg bg-brand-accent/10 flex items-center justify-center text-brand-accent mb-3">
-            <i class="fa-solid fa-lock text-sm"></i>
-          </div>
-          <h4 class="text-sm font-bold text-white mb-1">Direct & Confidential</h4>
-          <p class="text-xs text-brand-muted leading-relaxed">No third-party leaks. Clear terms agreed before release with verified accounts.</p>
-        </div>
-
-        <div class="p-5 rounded-xl glassmorphism border border-brand-border text-left">
-          <div class="w-9 h-9 rounded-lg bg-brand-accent/10 flex items-center justify-center text-brand-accent mb-3">
-            <i class="fa-solid fa-bolt text-sm"></i>
-          </div>
-          <h4 class="text-sm font-bold text-white mb-1">Swift Turnaround</h4>
-          <p class="text-xs text-brand-muted leading-relaxed">Transactions process instantly after bank confirmation without unneeded waiting.</p>
-        </div>
-
-        <div class="p-5 rounded-xl glassmorphism border border-brand-border text-left">
-          <div class="w-9 h-9 rounded-lg bg-brand-accent/10 flex items-center justify-center text-brand-accent mb-3">
-            <i class="fa-solid fa-handshake-simple text-sm"></i>
-          </div>
-          <h4 class="text-sm font-bold text-white mb-1">Transparent Rates</h4>
-          <p class="text-xs text-brand-muted leading-relaxed">Real-time market rates locked upfront. No surprise commissions or hidden deduction.</p>
-        </div>
-      </div>
-
-      <!-- Step By Step Section -->
-      <div class="w-full max-w-2xl bg-brand-dark rounded-2xl p-6 sm:p-8 border border-brand-border text-left mb-12">
-        <h4 class="text-base font-bold text-white mb-5 text-center">How To Initiate A Deal</h4>
-        
-        <div class="space-y-4">
-          <div class="flex items-start gap-3.5">
-            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-secondary border border-brand-border flex items-center justify-center text-brand-accent text-xs font-bold">1</span>
-            <div>
-              <p class="text-xs font-bold text-white">Initiate Direct Chat</p>
-              <p class="text-[11px] text-brand-muted">Drop a message on WhatsApp (+62 852-8449-6722) or Telegram (@SAHIL_P2P_01) with volume details.</p>
+            <div class="text-xs font-bold text-white flex items-center gap-1.5">
+              Sahil (Verified Merchant)
+              <i class="fa-solid fa-certificate text-blue-400 text-xs"></i>
             </div>
-          </div>
-          <div class="flex items-start gap-3.5">
-            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-secondary border border-brand-border flex items-center justify-center text-brand-accent text-xs font-bold">2</span>
-            <div>
-              <p class="text-xs font-bold text-white">Lock Rate & Account Details</p>
-              <p class="text-[11px] text-brand-muted">Mutually confirm execution terms, official exchange rates, and preferred settlement method.</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-3.5">
-            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-secondary border border-brand-border flex items-center justify-center text-brand-accent text-xs font-bold">3</span>
-            <div>
-              <p class="text-xs font-bold text-white">Instant Completion</p>
-              <p class="text-[11px] text-brand-muted">Prompt transfer confirmation and release within minutes under verified transaction standards.</p>
-            </div>
+            <p class="text-[11px] text-slate-400 font-mono">Telegram: @SAHIL_P2P_01</p>
           </div>
         </div>
-      </div>
-
-      <!-- Meta Compliance Notice -->
-      <div class="max-w-xl text-center">
-        <p class="text-[11px] text-slate-500 leading-relaxed">
-          <strong>Disclaimer:</strong> This desk provides direct peer-to-peer informational and liquidity routing services. We do not provide speculative investment advice, managed portfolios, or guaranteed investment returns. All transactions are subject to peer identity confirmation and local compliance rules.
-        </p>
       </div>
 
     </div>
+
+    <!-- 3-Step Execution Standard -->
+    <div class="glass-surface rounded-2xl p-6 sm:p-8 border border-brand-border mb-12">
+      <h4 class="text-sm font-bold text-white text-center mb-6">Standard Trade Execution Process</h4>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-4 rounded-xl bg-brand-900/60 border border-brand-border/80">
+          <div class="w-7 h-7 rounded-full bg-brand-850 border border-brand-border text-brand-accent font-mono font-bold text-xs flex items-center justify-center mb-3">1</div>
+          <h5 class="text-xs font-bold text-white mb-1">State Your Volume</h5>
+          <p class="text-[11px] text-slate-400 leading-relaxed">Message Sahil on WhatsApp or Telegram with your required USDT amount to reserve allocation.</p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-brand-900/60 border border-brand-border/80">
+          <div class="w-7 h-7 rounded-full bg-brand-850 border border-brand-border text-brand-accent font-mono font-bold text-xs flex items-center justify-center mb-3">2</div>
+          <h5 class="text-xs font-bold text-white mb-1">Receive Instant INR Payment</h5>
+          <p class="text-[11px] text-slate-400 leading-relaxed">Funds are dispatched via IMPS / RTGS to your matching bank account along with verified UTR proof.</p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-brand-900/60 border border-brand-border/80">
+          <div class="w-7 h-7 rounded-full bg-brand-850 border border-brand-border text-brand-accent font-mono font-bold text-xs flex items-center justify-center mb-3">3</div>
+          <h5 class="text-xs font-bold text-white mb-1">Release Crypto</h5>
+          <p class="text-[11px] text-slate-400 leading-relaxed">Once you verify credits in your banking app, release the corresponding USDT safely.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Legal Compliance & Fair Trading Statement -->
+    <div class="max-w-2xl mx-auto text-center border-t border-brand-border pt-6">
+      <p class="text-[11px] text-slate-500 leading-relaxed">
+        <strong>Strict Settlement Policy:</strong> All trades are conducted strictly on a 1-on-1 direct counterparty basis. Third-party accounts or unverified third-party depositors will not be accommodated under any circumstances.
+      </p>
+    </div>
+
   </main>
 
-  <!-- Sticky Mobile Bottom Bar -->
-  <div class="fixed bottom-0 left-0 right-0 glassmorphism p-3 sm:hidden border-t border-brand-border z-40">
+  <!-- Mobile Sticky Bottom Bar -->
+  <div class="fixed bottom-0 left-0 right-0 glass-surface p-3 sm:hidden border-t border-brand-border z-50">
     <div class="flex gap-2">
-      <a href="https://wa.me/6285284496722?text=Hi%20Sahil,%20I%20want%20to%20deal." class="flex-1 bg-brand-accent text-brand-black py-3 rounded-xl font-extrabold text-xs flex items-center justify-center gap-2 shadow-neon">
-        <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp
+      <a href="https://t.me/SAHIL_P2P_01" 
+         target="_blank"
+         class="flex-1 bg-brand-telegram text-white py-3 rounded-xl font-bold text-xs flex items-center justify-center gap-2 shadow-md">
+        <i class="fa-brands fa-telegram text-base"></i> Telegram
       </a>
-      <a href="https://t.me/SAHIL_P2P_01" class="flex-1 bg-brand-secondary text-white py-3 rounded-xl font-bold text-xs border border-brand-border flex items-center justify-center gap-2">
-        <i class="fa-brands fa-telegram text-base text-[#229ED9]"></i> Telegram
+      <a href="https://wa.me/6285284496722?text=Hello%20Sahil,%20I%20want%20to%20trade%20at%20the%20124%20INR%20rate." 
+         target="_blank"
+         class="flex-1 bg-brand-accent text-brand-950 py-3 rounded-xl font-extrabold text-xs flex items-center justify-center gap-2 shadow-glowGreen">
+        <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp (₹124)
       </a>
     </div>
   </div>
+
+  <!-- Dynamic Rate Engine -->
+  <script>
+    const rate = 124.00;
+    const baseMarketRate = 88.50;
+    const usdInput = document.getElementById('usdInput');
+    const inrOutput = document.getElementById('inrOutput');
+    const bonusOutput = document.getElementById('bonusOutput');
+    const waDealBtn = document.getElementById('waDealBtn');
+
+    function calculate() {
+      const usd = parseFloat(usdInput.value) || 0;
+      const totalInr = usd * rate;
+      const baseInr = usd * baseMarketRate;
+      const surplus = totalInr - baseInr;
+
+      inrOutput.value = totalInr.toLocaleString('en-IN', { maximumFractionDigits: 2, minimumFractionDigits: 2 });
+      bonusOutput.textContent = `+₹${surplus.toLocaleString('en-IN', { maximumFractionDigits: 0 })} INR Extra Profit`;
+
+      // Dynamically update WhatsApp CTA message with the exact volume
+      const message = encodeURIComponent(`Hello Sahil, I want to lock ${usd} USDT at the special ₹124 rate (Total: ₹${totalInr.toLocaleString('en-IN')}).`);
+      waDealBtn.href = `https://wa.me/6285284496722?text=${message}`;
+    }
+
+    usdInput.addEventListener('input', calculate);
+    calculate();
+  </script>
 
 </body>
 </html>
