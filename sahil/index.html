@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1391545159161293'); // Apni working Pixel ID
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1391545159161293&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Sahil P2P — Instant OTC Desk (INR ⇄ USDT)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --primary: #25D366;
+      --telegram: #229ED9;
+      --telegram-hover: #1B87BA;
+      --accent-teal: #77e0b5;
+      --dark-bg: #0d0c22;
+      --surface-light: #16152b;
+      --surface-subtle: #121124;
+      --surface-border: #262442;
+      --text-main: #ffffff;
+      --text-muted: #9e9ea7;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--dark-bg);
+      color: #fff;
+      min-height: 100vh;
+      overflow-x: hidden;
+      line-height: 1.5;
+      padding-bottom: 90px;
+    }
+    .container { width: 100%; max-width: 540px; margin: 0 auto; padding: 0 16px; }
+
+    .top-banner {
+      background: linear-gradient(90deg, rgba(245, 158, 11, 0.15), rgba(34, 158, 217, 0.2));
+      border-bottom: 1px solid rgba(245, 158, 11, 0.3);
+      padding: 8px 12px;
+      text-align: center;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #fcd34d;
+      font-family: var(--font-mono);
+    }
+
+    header {
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(13, 12, 34, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+    }
+    .nav-flex { display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: flex; align-items: center; gap: 10px; }
+    .avatar-wrapper {
+      width: 40px; height: 40px; border-radius: 50%;
+      border: 2px solid var(--accent-teal); position: relative;
+    }
+    .avatar-wrapper img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+    .online-dot {
+      position: absolute; bottom: 0; right: 0;
+      width: 10px; height: 10px; background: #10b981;
+      border: 2px solid var(--dark-bg); border-radius: 50%;
+    }
+    .brand-title { font-size: 16px; font-weight: 800; }
+    .badge-verified {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: rgba(119, 224, 181, 0.1); color: var(--accent-teal);
+      border: 1px solid rgba(119, 224, 181, 0.25);
+      padding: 5px 10px; border-radius: 999px; font-size: 11px; font-weight: 700;
+    }
+
+    .hero { padding: 24px 0 20px; text-align: center; }
+    .hero-title {
+      font-size: clamp(24px, 5.5vw, 34px);
+      font-weight: 800; line-height: 1.2; margin-bottom: 8px;
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #fff 20%, #77e0b5 80%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero-subtitle { font-size: 13.5px; color: var(--text-muted); margin-bottom: 20px; }
+
+    .cta-card {
+      background: var(--surface-light);
+      border: 1px solid var(--surface-border);
+      border-radius: 18px;
+      padding: 18px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+    .cta-card-header {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 14px; font-size: 13px; font-weight: 700;
+    }
+    .action-btn-group { display: flex; flex-direction: column; gap: 12px; }
+
+    .btn-deal {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      width: 100%; padding: 15px 20px; border-radius: 12px;
+      font-weight: 800; font-size: 15px; text-decoration: none;
+      transition: all 0.2s ease; cursor: pointer; border: none;
+    }
+
+    /* Active Highlighted Telegram Button */
+    .btn-tg {
+      background: var(--telegram); color: #fff;
+      box-shadow: 0 4px 25px rgba(34, 158, 217, 0.45);
+    }
+    .btn-tg:active { transform: scale(0.98); background: var(--telegram-hover); }
+
+    /* Disabled WhatsApp Styling */
+    .btn-disabled {
+      background: #1c2621 !important;
+      color: #617369 !important;
+      border: 1px dashed #2f4539 !important;
+      cursor: not-allowed !important;
+      pointer-events: none !important;
+      box-shadow: none !important;
+      opacity: 0.65;
+    }
+
+    .feature-list {
+      background: var(--surface-subtle);
+      border-radius: 12px;
+      border: 1px solid var(--surface-border);
+      padding: 12px;
+      margin-bottom: 14px;
+      font-size: 12px;
+      font-family: var(--font-mono);
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .feature-item { display: flex; justify-content: space-between; }
+    .feature-item span:first-child { color: var(--text-muted); }
+    .feature-item span:last-child { color: var(--accent-teal); font-weight: 700; }
+
+    .trust-grid { display: grid; grid-template-columns: 1fr; gap: 10px; text-align: left; }
+    .trust-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--surface-border);
+      padding: 14px; border-radius: 12px;
+    }
+    .trust-card h4 { font-size: 13.5px; font-weight: 700; margin-bottom: 3px; display: flex; align-items: center; gap: 8px; }
+    .trust-card p { font-size: 12px; color: var(--text-muted); }
+
+    /* Sticky Mobile Bottom Bar */
+    .sticky-bar {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      background: rgba(13, 12, 34, 0.95);
+      border-top: 1px solid var(--surface-border);
+      padding: 10px 16px;
+      display: flex; gap: 10px;
+      z-index: 999;
+      backdrop-filter: blur(16px);
+    }
+    .sticky-bar a {
+      flex: 1; padding: 13px 10px; border-radius: 10px;
+      font-size: 13px; font-weight: 800; text-align: center;
+      text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-banner">
+    <i class="fa-solid fa-bolt"></i> CORPORATE OTC DESK — INSTANT PAYOUT (RTGS/IMPS)
+  </div>
+
+  <header>
+    <div class="container nav-flex">
+      <div class="brand">
+        <div class="avatar-wrapper">
+          <img src="https://d1yei2z3i6k35z.cloudfront.net/13184094/6aa6e6f86b5e55.81674691_730376455_18113066110777222_5660903907453500367_n.jpg" alt="Sahil" />
+          <div class="online-dot"></div>
+        </div>
+        <div>
+          <div class="brand-title">Sahil <span>P2P</span></div>
+        </div>
+      </div>
+      <div class="badge-verified">
+        <i class="fa-solid fa-circle-check"></i> Verified Merchant
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1 class="hero-title">
+        Direct OTC Deal<br />
+        <span class="gradient-text">Highest Rate For USDT</span>
+      </h1>
+      <p class="hero-subtitle">
+        Zero fees, freeze-proof corporate accounts, instant IMPS/RTGS bank release. Deal online or face-to-face.
+      </p>
+
+      <div class="cta-card">
+        <div class="cta-card-header">
+          <span><i class="fa-solid fa-bolt text-warning"></i> Fast Desk Settlement</span>
+          <span style="color: var(--accent-teal); font-family: var(--font-mono);">0% Deduction</span>
+        </div>
+
+        <div class="feature-list">
+          <div class="feature-item">
+            <span>Payout Type:</span>
+            <span>IMPS / RTGS (Instant)</span>
+          </div>
+          <div class="feature-item">
+            <span>Account Security:</span>
+            <span>100% Freeze-Proof Corporate</span>
+          </div>
+          <div class="feature-item">
+            <span>Minimum Order:</span>
+            <span>Flexible / Split Allowed</span>
+          </div>
+        </div>
+
+        <div class="action-btn-group">
+          <!-- Active Telegram Hero Button -->
+          <a id="mainTgBtn" href="#" class="btn-deal btn-tg" onclick="trackLead('Telegram')">
+            <i class="fa-brands fa-telegram text-xl"></i> Deal On Telegram (Instant Live Desk)
+          </a>
+          <!-- Inactive WhatsApp Button -->
+          <a href="javascript:void(0)" class="btn-deal btn-disabled" tabindex="-1" aria-disabled="true">
+            <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp (Queue Full — Use Telegram)
+          </a>
+        </div>
+      </div>
+
+      <div class="trust-grid">
+        <div class="trust-card">
+          <h4><i class="fa-solid fa-shield-halved" style="color: #10b981;"></i> Zero Bank Freeze Risk</h4>
+          <p>Clean verified corporate bank transfers. Safe from third-party cyber cell lien notices.</p>
+        </div>
+        <div class="trust-card">
+          <h4><i class="fa-solid fa-users" style="color: #38bdf8;"></i> Face to Face Deals Available</h4>
+          <p>Cash or physical handshakes available across major cities for high volumes.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Sticky Bar: Telegram Takes Primary Focus -->
+  <div class="sticky-bar">
+    <a id="stickyTgBtn" href="#" class="btn-tg" style="flex: 2;" onclick="trackLead('Telegram_Sticky')">
+      <i class="fa-brands fa-telegram text-base"></i> Open Telegram Desk
+    </a>
+    <a href="javascript:void(0)" class="btn-disabled" style="flex: 1; font-size: 11px;" tabindex="-1" aria-disabled="true">
+      <i class="fa-brands fa-whatsapp"></i> WA Busy
+    </a>
+  </div>
+
+  <script>
+    const TG_USER = "Sahil_P2P"; // Aapka working Telegram username
+    const MESSAGE = "Hello Sahil, I want to do an INR / USDT deal.";
+    const tgUrl = `https://t.me/${TG_USER}?text=${encodeURIComponent(MESSAGE)}`;
+
+    document.getElementById('mainTgBtn').href = tgUrl;
+    document.getElementById('stickyTgBtn').href = tgUrl;
+
+    function trackLead(source) {
+      if (typeof fbq === 'function') {
+        fbq('track', 'Lead', { content_name: source });
+        fbq('trackCustom', 'DealInitiated', { platform: source });
+      }
+    }
+  </script>
+</body>
+</html>
