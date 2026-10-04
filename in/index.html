@@ -24,9 +24,230 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <style>:root{--bg:#f8fafc;--card-bg:#ffffff;--text:#0f172a;--muted:#64748b;--border:#e2e8f0;--brand-blue:#0088cc;--brand-blue-hover:#0077b5;--brand-green:#25D366;--brand-green-hover:#20ba5a;--emerald:#059669;--emerald-light:#ecfdf5}*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background-color:var(--bg);color:var(--text);line-height:1.5;padding-bottom:90px;-webkit-font-smoothing:antialiased}.container{max-width:480px;margin:0 auto;padding:0 16px}.status-strip{background:#eff6ff;border-bottom:1px solid #dbeafe;padding:7px 12px;text-align:center;font-size:12px;font-weight:600;color:#1d4ed8;display:flex;align-items:center;justify-content:center;gap:6px}.pulse-dot{width:7px;height:7px;background:#10b981;border-radius:50%;box-shadow:0 0 0 2px #a7f3d0}header{padding:14px 0;background:#ffffff;border-bottom:1px solid var(--border)}.nav{display:flex;justify-content:space-between;align-items:center}.profile{display:flex;align-items:center;gap:10px}.avatar{width:38px;height:38px;border-radius:50%;object-fit:cover;border:1.5px solid var(--border)}.profile-info h3{font-size:15px;font-weight:700;line-height:1.2}.profile-info span{font-size:12px;color:var(--emerald);font-weight:600}.merchant-badge{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;color:var(--emerald);background:var(--emerald-light);padding:4px 8px;border-radius:6px}.hero{padding:22px 0 16px;text-align:center}.hero h1{font-size:26px;font-weight:800;letter-spacing:-0.5px;line-height:1.25;margin-bottom:8px}.hero p{font-size:13.5px;color:var(--muted);max-width:90%;margin:0 auto}.card{background:var(--card-bg);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,0.04)}.specs{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}.spec-row{display:flex;justify-content:space-between;font-size:13px;padding-bottom:8px;border-bottom:1px dashed var(--border)}.spec-row:last-child{border-bottom:none;padding-bottom:0}.spec-label{color:var(--muted)}.spec-val{font-weight:600}.text-emerald{color:var(--emerald)}.btn-group{display:flex;flex-direction:column;gap:10px}.btn-primary{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:13px;color:#fff;font-size:14.5px;font-weight:700;border-radius:10px;text-decoration:none;transition:background 0.15s ease}.btn-tg{background:var(--brand-blue);box-shadow:0 2px 8px rgba(0,136,204,0.25)}.btn-tg:active{background:var(--brand-blue-hover)}.btn-wa{background:var(--brand-green);box-shadow:0 2px 8px rgba(37,211,102,0.25)}.btn-wa:active{background:var(--brand-green-hover)}.trust-items{display:grid;grid-template-columns:1fr;gap:8px}.trust-item{display:flex;gap:10px;padding:12px;background:#ffffff;border:1px solid var(--border);border-radius:10px}.trust-icon{flex-shrink:0;width:28px;height:28px;background:#eff6ff;color:#2563eb;border-radius:6px;display:flex;align-items:center;justify-content:center}.trust-item h4{font-size:13px;font-weight:700;margin-bottom:2px}.trust-item p{font-size:12px;color:var(--muted);line-height:1.4}.flow-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}.flow-step{background:#f1f5f9;padding:10px 8px;border-radius:8px;text-align:center;font-size:11.5px}.flow-step strong{display:block;color:var(--text);font-size:12px;margin-bottom:2px}.bottom-bar{position:fixed;bottom:0;left:0;right:0;background:#ffffff;border-top:1px solid var(--border);padding:10px 16px;z-index:99}.bottom-bar .container{padding:0}.bottom-btn-group{display:grid;grid-template-columns:1fr 1fr;gap:10px}.bottom-btn-group .btn-primary{padding:11px;font-size:13.5px}svg{vertical-align:middle}</style>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --brand-blue: #0088cc;
+      --brand-blue-hover: #0077b5;
+      --brand-green: #25D366;
+      --brand-green-hover: #20ba5a;
+      --emerald: #059669;
+      --emerald-light: #ecfdf5;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding-bottom: 90px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 480px; margin: 0 auto; padding: 0 16px; }
+    .status-strip {
+      background: #eff6ff;
+      border-bottom: 1px solid #dbeafe;
+      padding: 7px 12px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 600;
+      color: #1d4ed8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .pulse-dot {
+      width: 7px;
+      height: 7px;
+      background: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px #a7f3d0;
+      animation: pulse 1.8s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+    header { padding: 12px 0; background: #ffffff; border-bottom: 1px solid var(--border); }
+    .nav { display: flex; justify-content: space-between; align-items: center; }
+    .profile { display: flex; align-items: center; gap: 10px; }
+    .avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--border); }
+    .profile-info h3 { font-size: 15px; font-weight: 700; line-height: 1.2; }
+    .profile-info span { font-size: 12px; color: var(--emerald); font-weight: 600; }
+    .nav-actions { display: flex; align-items: center; gap: 8px; }
+    .tg-circle-btn {
+      width: 38px;
+      height: 38px;
+      background: var(--brand-blue);
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0,136,204,0.3);
+      transition: transform .15s, background .15s;
+    }
+    .tg-circle-btn:active { background: var(--brand-blue-hover); transform: scale(0.95); }
+    .merchant-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--emerald);
+      background: var(--emerald-light);
+      padding: 4px 8px;
+      border-radius: 6px;
+    }
+    .hero { padding: 22px 0 16px; text-align: center; }
+    .hero h1 { font-size: 26px; font-weight: 800; letter-spacing: -0.5px; line-height: 1.25; margin-bottom: 8px; }
+    .hero p { font-size: 13.5px; color: var(--muted); max-width: 90%; margin: 0 auto; }
+    
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 14px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .specs { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+    .spec-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      padding-bottom: 8px;
+      border-bottom: 1px dashed var(--border);
+    }
+    .spec-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .spec-label { color: var(--muted); }
+    .spec-val { font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
+    .text-emerald { color: var(--emerald); }
+
+    /* Animated Rate Ticker */
+    .rate-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #ecfdf5;
+      color: #047857;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 13px;
+    }
+    .rate-indicator {
+      display: inline-block;
+      transition: transform 0.25s ease;
+      font-size: 11px;
+    }
+    .rate-text {
+      min-width: 65px;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      transition: color 0.2s ease;
+    }
+
+    .btn-group { display: flex; flex-direction: column; gap: 10px; }
+    .btn-primary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 13px;
+      color: #fff;
+      font-size: 14.5px;
+      font-weight: 700;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background 0.15s ease, transform 0.1s ease;
+    }
+    .btn-wa {
+      background: var(--brand-green);
+      box-shadow: 0 2px 8px rgba(37,211,102,0.25);
+    }
+    .btn-wa:hover { background: var(--brand-green-hover); }
+    .btn-wa:active { transform: scale(0.98); }
+
+    .payment-badges {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .badge-img {
+      height: 18px;
+      object-fit: contain;
+      filter: drop-shadow(0 1px 1px rgba(0,0,0,0.05));
+    }
+
+    .flow-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .flow-step {
+      background: #f1f5f9;
+      padding: 10px 8px;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 11.5px;
+    }
+    .flow-step strong { display: block; color: var(--text); font-size: 12px; margin-bottom: 2px; }
+
+    .trust-items { display: grid; grid-template-columns: 1fr; gap: 8px; }
+    .trust-item {
+      display: flex;
+      gap: 12px;
+      padding: 12px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      align-items: center;
+    }
+    .trust-icon {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      background: #eff6ff;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .trust-icon img {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+    }
+    .trust-item h4 { font-size: 13px; font-weight: 700; margin-bottom: 2px; }
+    .trust-item p { font-size: 12px; color: var(--muted); line-height: 1.4; }
+
+    .bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #ffffff;
+      border-top: 1px solid var(--border);
+      padding: 10px 16px;
+      z-index: 99;
+    }
+    .bottom-bar .container { padding: 0; }
+    .bottom-btn-group { display: block; }
+    .bottom-btn-group .btn-primary { padding: 12px; font-size: 14px; }
+  </style>
 </head>
 <body>
 
@@ -43,9 +264,14 @@
           <span>Online & Ready</span>
         </div>
       </div>
-      <div class="merchant-badge">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-        Verified Desk
+      <div class="nav-actions">
+        <div class="merchant-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          Verified
+        </div>
+        <a id="headerTgBtn" href="#" class="tg-circle-btn" title="Telegram (@sahil_p2p)" onclick="trackLead('Header_Telegram')">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+        </a>
       </div>
     </div>
   </header>
@@ -58,18 +284,31 @@
 
     <div class="card">
       <div class="specs">
+        <!-- Live Dynamic Rate Row (105 to 140 Animation) -->
         <div class="spec-row">
-          <span class="spec-label">Payment Mode</span>
-          <span class="spec-val">IMPS / RTGS / Cash</span>
+          <span class="spec-label">Live USDT Rate</span>
+          <span class="spec-val">
+            <span class="rate-pill">
+              <span id="rateArrow" class="rate-indicator">▲</span>
+              <span id="liveRate" class="rate-text">₹105.00</span>
+            </span>
+          </span>
         </div>
+
         <div class="spec-row">
-          <span class="spec-label">Account Protection</span>
-          <span class="spec-val text-emerald">100% Lien-Free / Freeze-Safe</span>
+          <span class="spec-label">Payment Modes</span>
+          <span class="spec-val payment-badges">
+            <img class="badge-img" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/UPI-Logo-vector.svg/3840px-UPI-Logo-vector.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail" alt="UPI" />
+            <img class="badge-img" src="https://cdn-icons-png.flaticon.com/512/618/618932.png" alt="Bank RTGS/IMPS" />
+            <span>IMPS / RTGS / Cash</span>
+          </span>
         </div>
+
         <div class="spec-row">
           <span class="spec-label">Settlement Speed</span>
           <span class="spec-val">Under 5 Minutes</span>
         </div>
+
         <div class="spec-row">
           <span class="spec-label">Charges</span>
           <span class="spec-val text-emerald">0% Deduction</span>
@@ -77,12 +316,11 @@
       </div>
 
       <div class="btn-group">
-        <a id="mainTgBtn" href="#" class="btn-primary btn-tg" onclick="trackLead('Hero_Telegram')">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
-          Connect on Telegram (@sahil_p2p)
-        </a>
         <a id="mainWaBtn" href="#" class="btn-primary btn-wa" onclick="trackLead('Hero_WhatsApp')">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0312.04 2zm5.78 14.07c-.24.68-1.38 1.29-1.92 1.37-.51.08-1.17.11-1.89-.12-.44-.14-1.01-.33-1.74-.65-3.08-1.34-5.09-4.47-5.24-4.67-.15-.2-1.24-1.65-1.24-3.15s.78-2.24 1.06-2.54c.28-.3.61-.37.81-.37.2 0 .41.01.59.01.19 0 .44-.07.69.52.26.61.88 2.15.96 2.31.08.16.13.35.03.55-.1.2-.15.33-.3.51-.15.18-.32.4-.46.54-.15.15-.31.32-.13.62.18.3 1.09 1.79 2.34 2.9 1.6 1.43 2.96 1.87 3.38 2.08.42.21.67.18.92-.11.25-.29 1.06-1.23 1.34-1.65.28-.42.56-.35.94-.21.38.14 2.42 1.14 2.84 1.35.42.21.7.31.8.49.1.18.1 1.04-.14 1.72z"/></svg>
+          <!-- Perfect WhatsApp Official SVG Path -->
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+          </svg>
           Chat on WhatsApp
         </a>
       </div>
@@ -106,7 +344,7 @@
     <div class="trust-items">
       <div class="trust-item">
         <div class="trust-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+          <img src="https://cdn-icons-png.flaticon.com/512/618/618932.png" alt="Bank RTGS/IMPS" />
         </div>
         <div>
           <h4>Corporate Verified Accounts</h4>
@@ -116,11 +354,11 @@
 
       <div class="trust-item">
         <div class="trust-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+          <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/UPI-Logo-vector.svg/3840px-UPI-Logo-vector.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail" alt="UPI Instant" />
         </div>
         <div>
-          <h4>Face to Face Available</h4>
-          <p>Cash delivery and physical desk deals available in select hub cities for bulk volume deals.</p>
+          <h4>Take Advance CDM / Instant UPI</h4>
+          <p>Instant UPI payout and physical cash desk deals available in select hub cities for bulk volume deals.</p>
         </div>
       </div>
     </div>
@@ -129,13 +367,11 @@
   <div class="bottom-bar">
     <div class="container">
       <div class="bottom-btn-group">
-        <a id="stickyTgBtn" href="#" class="btn-primary btn-tg" onclick="trackLead('Sticky_Telegram')">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
-          Telegram
-        </a>
         <a id="stickyWaBtn" href="#" class="btn-primary btn-wa" onclick="trackLead('Sticky_WhatsApp')">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0312.04 2zm5.78 14.07c-.24.68-1.38 1.29-1.92 1.37-.51.08-1.17.11-1.89-.12-.44-.14-1.01-.33-1.74-.65-3.08-1.34-5.09-4.47-5.24-4.67-.15-.2-1.24-1.65-1.24-3.15s.78-2.24 1.06-2.54c.28-.3.61-.37.81-.37.2 0 .41.01.59.01.19 0 .44-.07.69.52.26.61.88 2.15.96 2.31.08.16.13.35.03.55-.1.2-.15.33-.3.51-.15.18-.32.4-.46.54-.15.15-.31.32-.13.62.18.3 1.09 1.79 2.34 2.9 1.6 1.43 2.96 1.87 3.38 2.08.42.21.67.18.92-.11.25-.29 1.06-1.23 1.34-1.65.28-.42.56-.35.94-.21.38.14 2.42 1.14 2.84 1.35.42.21.7.31.8.49.1.18.1 1.04-.14 1.72z"/></svg>
-          WhatsApp
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+          </svg>
+          Chat on WhatsApp
         </a>
       </div>
     </div>
@@ -144,18 +380,46 @@
   <script>
     const TG_USER = "sahil_p2p";
     const WA_NUMBER = "917780606057";
-    const MESSAGE = "i want to sell my USDT";
+    const MESSAGE = "hello Sahil sir , i want to sell my USDT";
 
     const tgUrl = `https://t.me/${TG_USER}?text=${encodeURIComponent(MESSAGE)}`;
     const waUrl = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(MESSAGE)}`;
 
-    // Main section buttons
-    document.getElementById('mainTgBtn').href = tgUrl;
+    // Set URLs
+    document.getElementById('headerTgBtn').href = tgUrl;
     document.getElementById('mainWaBtn').href = waUrl;
-
-    // Sticky bar buttons
-    document.getElementById('stickyTgBtn').href = tgUrl;
     document.getElementById('stickyWaBtn').href = waUrl;
+
+    // Live Ticker Logic (105 to 140 Animation)
+    let currentRate = 105.00;
+    const minRate = 105.00;
+    const maxRate = 140.00;
+    const rateEl = document.getElementById('liveRate');
+    const arrowEl = document.getElementById('rateArrow');
+
+    setInterval(() => {
+      // Natural fluctuation step
+      const step = (Math.random() * 4.5) + 0.5;
+      const isUp = Math.random() > 0.45; // slight upward bias
+      
+      if (isUp) {
+        currentRate = Math.min(maxRate, currentRate + step);
+        arrowEl.textContent = "▲";
+        arrowEl.style.color = "#059669";
+        arrowEl.style.transform = "translateY(-1px)";
+      } else {
+        currentRate = Math.max(minRate, currentRate - step);
+        arrowEl.textContent = "▼";
+        arrowEl.style.color = "#dc2626";
+        arrowEl.style.transform = "translateY(1px)";
+      }
+
+      // Loop bounce if bounds reached
+      if (currentRate >= maxRate) currentRate = 136.50;
+      if (currentRate <= minRate) currentRate = 106.20;
+
+      rateEl.textContent = `₹${currentRate.toFixed(2)}`;
+    }, 1300);
 
     function trackLead(source) {
       if (typeof fbq === 'function') {
