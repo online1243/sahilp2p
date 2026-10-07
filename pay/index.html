@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>Sahil P2P — Secure Payment Portal</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #09090B;
+      --surface: #121215;
+      --surface-border: rgba(255, 255, 255, 0.08);
+      --text-primary: #FAFAFA;
+      --text-secondary: #A1A1AA;
+      --accent-lime: #c8ff5c;
+      --accent-crypto: #F0B90B;
+      --success: #10B981;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      background: var(--bg);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--text-primary);
+      overflow-x: hidden;
+    }
+
+    .app-screen {
+      width: 100%;
+      max-width: 440px;
+      min-height: 100vh;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* 1. FIXED TOP HEADER */
+    .brand-bar {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 440px;
+      z-index: 100;
+      background: rgba(9, 9, 11, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: max(12px, env(safe-area-inset-top, 12px)) 16px 10px 16px;
+      border-bottom: 1px solid var(--surface-border);
+    }
+
+    .brand-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 1px solid var(--surface-border);
+      background: #000;
+    }
+
+    .agency-title {
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      line-height: 1.2;
+    }
+
+    .agency-subtitle {
+      font-size: 10.5px;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .verified-badge {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--accent-lime);
+      background: var(--surface);
+      border: 1px solid rgba(200, 255, 92, 0.2);
+      padding: 5px 10px;
+      border-radius: 20px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      flex-shrink: 0;
+    }
+
+    /* 2. CENTER CONTENT STACK */
+    .center-content-area {
+      flex: 1;
+      padding-top: max(72px, calc(env(safe-area-inset-top, 0px) + 62px));
+      padding-bottom: max(142px, calc(env(safe-area-inset-bottom, 0px) + 128px));
+      padding-left: 16px;
+      padding-right: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .package-card {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 16px;
+      border: 1px solid var(--surface-border);
+      padding: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .time-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(18, 18, 21, 0.85);
+      backdrop-filter: blur(8px);
+      color: white;
+      padding: 3px 8px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 9.5px;
+      font-weight: 600;
+      z-index: 10;
+      border: 1px solid var(--surface-border);
+    }
+
+    .clock-icon {
+      width: 11px;
+      height: 11px;
+      border: 1.5px solid white;
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .clock-icon::before {
+      content: "";
+      position: absolute;
+      width: 1.5px;
+      height: 3.5px;
+      background: white;
+      top: 1px;
+      left: 50%;
+      transform: translateX(-50%);
+      transform-origin: bottom;
+      animation: clockHand 2s infinite linear;
+    }
+
+    @keyframes clockHand {
+      0% { transform: translateX(-50%) rotate(0deg); }
+      100% { transform: translateX(-50%) rotate(360deg); }
+    }
+
+    .physics-stage-container {
+      width: 100%;
+      height: 135px;
+      background: radial-gradient(circle at 50% 50%, #101622 0%, #060709 100%);
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    #oceanPhysicsCanvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .card-title {
+      font-size: 14.5px;
+      color: #fff;
+      font-weight: 700;
+      margin-top: 8px;
+    }
+
+    .card-description {
+      font-size: 11px;
+      color: var(--text-secondary);
+      line-height: 1.4;
+      margin-top: 2px;
+    }
+
+    .view-status-btn {
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+      border: 1px solid var(--surface-border);
+      padding: 7px 14px;
+      border-radius: 50px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .view-status-btn:hover {
+      background: #ffffff;
+      color: #000;
+    }
+
+    /* SPEC MATRIX */
+    .spec-matrix {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .spec-cell {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: 12px;
+      padding: 9px 12px;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 52px;
+      transition: all 0.2s ease;
+    }
+
+    .spec-cell.clickable {
+      cursor: pointer;
+      background: linear-gradient(180deg, rgba(200, 255, 92, 0.05) 0%, var(--surface) 100%);
+      border-color: rgba(200, 255, 92, 0.25);
+    }
+
+    .spec-cell.clickable:hover {
+      background: rgba(200, 255, 92, 0.12);
+      border-color: var(--accent-lime);
+    }
+
+    .spec-label {
+      font-size: 9px;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      font-weight: 600;
+      margin-bottom: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4px;
+      white-space: nowrap;
+    }
+
+    .spec-value {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-primary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.2;
+    }
+
+    /* FINANCIAL DISPLAY */
+    .financial-hero {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+      border: 1px solid var(--surface-border);
+      border-radius: 14px;
+      padding: 12px 14px;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11.5px;
+      color: var(--text-secondary);
+      margin-bottom: 4px;
+    }
+
+    .summary-row.discount {
+      color: var(--success);
+      font-weight: 600;
+    }
+
+    .total-divider {
+      height: 1px;
+      background: var(--surface-border);
+      margin: 8px 0;
+    }
+
+    .total-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .total-label {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .total-sub {
+      font-size: 9.5px;
+      color: var(--text-secondary);
+    }
+
+    .total-amount {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--text-primary);
+      line-height: 1;
+    }
+
+    /* 3. FLOATING ACTION BAR */
+    .floating-action-bar {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 440px;
+      z-index: 100;
+      background: rgba(9, 9, 11, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-top: 1px solid var(--surface-border);
+      padding: 10px 16px max(12px, env(safe-area-inset-bottom, 12px)) 16px;
+      box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.6);
+    }
+
+    .checkbox-container-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .checkbox-text {
+      font-size: 10.5px;
+      color: var(--text-secondary);
+      user-select: none;
+      cursor: pointer;
+    }
+
+    .neon-checkbox {
+      --primary: #00ffaa;
+      --size: 18px;
+      position: relative;
+      width: var(--size);
+      height: var(--size);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .neon-checkbox input { display: none; }
+    .neon-checkbox__frame { position: relative; width: 100%; height: 100%; }
+
+    .neon-checkbox__box {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+      border-radius: 4px;
+      border: 2px solid #00cc88;
+      transition: all 0.4s ease;
+    }
+
+    .neon-checkbox__check-container {
+      position: absolute;
+      inset: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .neon-checkbox__check {
+      width: 80%;
+      height: 80%;
+      fill: none;
+      stroke: var(--primary);
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 40;
+      stroke-dashoffset: 40;
+      transition: all 0.4s ease;
+    }
+
+    .neon-checkbox input:checked ~ .neon-checkbox__frame .neon-checkbox__box {
+      background: rgba(0, 255, 170, 0.1);
+    }
+
+    .neon-checkbox input:checked ~ .neon-checkbox__frame .neon-checkbox__check {
+      stroke-dashoffset: 0;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .Btn {
+      width: 100%;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #101014;
+      border: 1px solid var(--surface-border);
+      border-radius: 12px;
+      color: white;
+      font-weight: 700;
+      font-size: 14.5px;
+      gap: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+      transition-duration: .3s;
+    }
+
+    .checkoutIcon {
+      height: 20px;
+      width: auto;
+      max-width: 60px;
+      object-fit: contain;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .Btn::before {
+      width: 100%;
+      height: 150px;
+      position: absolute;
+      content: "";
+      background-color: white;
+      border-radius: 50%;
+      left: -100%;
+      top: 0;
+      transition-duration: .3s;
+      mix-blend-mode: difference;
+    }
+
+    .Btn:hover::before {
+      transition-duration: .3s;
+      transform: translate(100%,-50%);
+      border-radius: 0;
+    }
+
+    .Btn:active {
+      transform: translate(2px, 2px);
+    }
+
+    .legal-footer {
+      font-size: 8.5px;
+      color: #71717A;
+      text-align: center;
+      margin-top: 6px;
+    }
+  </style>
+</head>
+<body>
+<div class="app-screen">
+  <!-- 1. FIXED TOP BAR -->
+  <header class="brand-bar">
+    <div class="brand-meta">
+      <img class="logo" src="https://d1yei2z3i6k35z.cloudfront.net/13184094/6aa6e6f86b5e55.81674691_730376455_18113066110777222_5660903907453500367_n.jpg" alt="Sahil P2P" />
+      <div>
+        <h1 class="agency-title">Sahil P2P</h1>
+        <div class="agency-subtitle">Trusted Crypto & P2P Desk</div>
+      </div>
+    </div>
+    <div class="verified-badge">
+      ✓ Verified Desk
+    </div>
+  </header>
+
+  <!-- 2. CENTER CONTENT AREA -->
+  <main class="center-content-area">
+    <!-- ANIMATED PHYSICS COLLISION CARD -->
+    <div class="package-card">
+      <div class="time-badge">
+        <div class="clock-icon"></div>
+        <span id="serviceDurationBadge">Instant Settlement</span>
+      </div>
+
+      <!-- 2D INFINITE COLLISION STAGE -->
+      <div class="physics-stage-container" id="physicsWrapper">
+        <canvas id="oceanPhysicsCanvas"></canvas>
+      </div>
+
+      <div class="card-title">P2P Escrow & Settlement</div>
+      <div class="card-description">Fast, verified transfers with instant settlement confirmation.</div>
+
+      <!-- REPUTATION LINK -->
+      <a href="https://www.google.com/search?q=sahil+P2P" target="_blank" class="view-status-btn">
+        View Reputation [ Sahil P2P ]
+      </a>
+    </div>
+
+    <!-- DYNAMIC USER INFO -->
+    <div class="spec-matrix">
+      <!-- CLICKABLE WHATSAPP SAVE DATE BUTTON -->
+      <a id="clientWhatsappLink" href="https://wa.me/917023046903?text=Hi%20Sahil%20P2P,%20saving%20order%20date%20for%20settlement." target="_blank" class="spec-cell clickable">
+        <div class="spec-label">
+          <span>WhatsApp Desk</span>
+          <span style="font-size: 8px; color: var(--accent-lime);">↗ Save Date</span>
+        </div>
+        <div class="spec-value" id="clientPhone">+91 70230 46903</div>
+      </a>
+
+      <div class="spec-cell">
+        <div class="spec-label">
+          <span>Client ID</span>
+        </div>
+        <div class="spec-value" id="clientTelegram">@client</div>
+      </div>
+    </div>
+
+    <!-- DYNAMIC PRICING HERO -->
+    <div class="financial-hero">
+      <div class="summary-row">
+        <span>Order Base Value</span>
+        <span id="baseChargeDisplay">₹12,000</span>
+      </div>
+      <div class="summary-row discount" id="discountRow" style="display: none;">
+        <span>Applied Discount (<span id="discountPercentDisplay">0</span>%)</span>
+        <span id="discountAmountDisplay">- ₹0</span>
+      </div>
+      <div class="total-divider"></div>
+      <div class="total-row">
+        <div>
+          <div class="total-label">Total Payable</div>
+          <div class="total-sub">Instant UPI Settlement</div>
+        </div>
+        <div class="total-amount" id="finalTotalDisplay">₹12,000</div>
+      </div>
+    </div>
+  </main>
+
+  <!-- 3. STICKY FLOATING BOTTOM BAR -->
+  <footer class="floating-action-bar">
+    <div class="checkbox-container-wrapper">
+      <label class="neon-checkbox">
+        <input type="checkbox" id="termsCheck" checked />
+        <div class="neon-checkbox__frame">
+          <div class="neon-checkbox__box"></div>
+          <div class="neon-checkbox__check-container">
+            <svg class="neon-checkbox__check" viewBox="0 0 24 24">
+              <path d="M4 12L9 17L20 6"></path>
+            </svg>
+          </div>
+        </div>
+      </label>
+      <span class="checkbox-text" onclick="toggleCheckbox()">I agree to P2P terms & settlement policy</span>
+    </div>
+
+    <div class="button-container">
+      <button class="Btn" onclick="processPayment()">
+        Confirm & Pay <span id="btnAmountText">₹12,000</span>
+        <img class="checkoutIcon" src="https://pdp.gokwik.co/assets/icons/checkout-btn-icon.svg" alt="UPI Payments" />
+      </button>
+    </div>
+
+    <div class="legal-footer">
+      Pay With UPI (8080840766@okbizaxis) ● Powered by Sahil P2P
+    </div>
+  </footer>
+</div>
+
+<script>
+  /* 2D HIGH-DPI COLLISION ENGINE */
+  function initOceanPhysics() {
+    const stage = document.getElementById("physicsWrapper");
+    const canvas = document.getElementById("oceanPhysicsCanvas");
+    if (!canvas || !stage) return;
+    const ctx = canvas.getContext("2d");
+
+    let width = stage.clientWidth;
+    let height = stage.clientHeight;
+    let dpr = window.devicePixelRatio || 1;
+
+    function resizeCanvas() {
+      width = stage.clientWidth;
+      height = stage.clientHeight;
+      dpr = window.devicePixelRatio || 1;
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      ctx.resetTransform();
+      ctx.scale(dpr, dpr);
+      ctx.imageSmoothingEnabled = true;
+      ctx.imageSmoothingQuality = "high";
+    }
+
+    resizeCanvas();
+
+    function createSafeImage(src) {
+      const img = new Image();
+      img.src = src;
+      return img;
+    }
+
+    // Naye 3 Crypto Logos
+    const imgBCH = createSafeImage("https://www.pngall.com/wp-content/uploads/10/Bitcoin-Cash-Crypto-Logo-PNG-HD-Image.png");
+    const imgUSDT = createSafeImage("https://freepnglogo.com/images/all_img/tether-icon-f304.png");
+    const imgBNB = createSafeImage("https://seeklogo.com/images/B/bnb-bnb-logo-87EE94D944-seeklogo.com.png");
+
+    const BASE_SPEED = 0.45;
+
+    // Bubbles State
+    const bubbles = [
+      {
+        x: width * 0.22,
+        y: height * 0.35,
+        vx: 0.45,
+        vy: 0.3,
+        radius: 25,
+        img: imgBCH,
+        color: "#0AC18E",
+        glow: "rgba(10, 193, 142, 0.45)",
+        padFactor: 0.72
+      },
+      {
+        x: width * 0.78,
+        y: height * 0.65,
+        vx: -0.4,
+        vy: -0.35,
+        radius: 25,
+        img: imgUSDT,
+        color: "#26A17B",
+        glow: "rgba(38, 161, 123, 0.45)",
+        padFactor: 0.72
+      },
+      {
+        x: width * 0.5,
+        y: height * 0.5,
+        vx: 0.35,
+        vy: -0.4,
+        radius: 27,
+        img: imgBNB,
+        color: "#F3BA2F",
+        glow: "rgba(243, 186, 47, 0.5)",
+        padFactor: 0.72
+      }
+    ];
+
+    function applyClickImpulse(e) {
+      const rect = canvas.getBoundingClientRect();
+      const clickX = (e.clientX || (e.touches && e.touches[0].clientX)) - rect.left;
+      const clickY = (e.clientY || (e.touches && e.touches[0].clientY)) - rect.top;
+
+      bubbles.forEach(b => {
+        const dx = b.x - clickX;
+        const dy = b.y - clickY;
+        const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+        const force = Math.max(1.8, 3.5 - dist / 60);
+        b.vx += (dx / dist) * force;
+        b.vy += (dy / dist) * force;
+
+        const currentSpeed = Math.sqrt(b.vx * b.vx + b.vy * b.vy);
+        const MAX_BOOST = 4.5;
+        if (currentSpeed > MAX_BOOST) {
+          b.vx = (b.vx / currentSpeed) * MAX_BOOST;
+          b.vy = (b.vy / currentSpeed) * MAX_BOOST;
+        }
+      });
+    }
+
+    stage.addEventListener("click", applyClickImpulse);
+    stage.addEventListener("touchstart", (e) => {
+      applyClickImpulse(e);
+    }, { passive: true });
+
+    let time = 0;
+
+    function drawContainedImage(ctx, img, x, y, radius, padFactor) {
+      if (!img || !img.complete || !img.naturalWidth) return;
+      const nw = img.naturalWidth;
+      const nh = img.naturalHeight;
+      const maxDim = radius * 2 * padFactor;
+      const scale = Math.min(maxDim / nw, maxDim / nh);
+      const dw = nw * scale;
+      const dh = nh * scale;
+
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(x, y, radius - 2, 0, Math.PI * 2);
+      ctx.clip();
+      ctx.drawImage(img, x - dw / 2, y - dh / 2, dw, dh);
+      ctx.restore();
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, width, height);
+      time += 0.015;
+
+      // Subtle Grid
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.025)";
+      ctx.lineWidth = 1;
+      for (let x = 0; x < width; x += 24) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, height);
+        ctx.stroke();
+      }
+      for (let y = 0; y < height; y += 24) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(width, y);
+        ctx.stroke();
+      }
+
+      // Proximity Laser Lines
+      for (let i = 0; i < bubbles.length; i++) {
+        for (let j = i + 1; j < bubbles.length; j++) {
+          const dx = bubbles[j].x - bubbles[i].x;
+          const dy = bubbles[j].y - bubbles[i].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 130) {
+            ctx.beginPath();
+            ctx.moveTo(bubbles[i].x, bubbles[i].y);
+            ctx.lineTo(bubbles[j].x, bubbles[j].y);
+            const alpha = (1 - dist / 130) * 0.45;
+            ctx.strokeStyle = `rgba(240, 185, 11, ${alpha})`;
+            ctx.lineWidth = 1.5;
+            ctx.setLineDash([4, 4]);
+            ctx.stroke();
+            ctx.setLineDash([]);
+          }
+        }
+      }
+
+      // Draw Coins
+      bubbles.forEach((b, idx) => {
+        const waveX = Math.cos(time + idx * 2) * 0.08;
+        const waveY = Math.sin(time + idx * 2.5) * 0.08;
+
+        b.x += b.vx + waveX;
+        b.y += b.vy + waveY;
+
+        const speed = Math.sqrt(b.vx * b.vx + b.vy * b.vy);
+        if (speed > BASE_SPEED) {
+          b.vx *= 0.985;
+          b.vy *= 0.985;
+        } else if (speed < BASE_SPEED * 0.7) {
+          b.vx = (b.vx / (speed || 1)) * BASE_SPEED;
+          b.vy = (b.vy / (speed || 1)) * BASE_SPEED;
+        }
+
+        if (b.x - b.radius < 0) {
+          b.x = b.radius;
+          b.vx = Math.abs(b.vx);
+        } else if (b.x + b.radius > width) {
+          b.x = width - b.radius;
+          b.vx = -Math.abs(b.vx);
+        }
+
+        if (b.y - b.radius < 0) {
+          b.y = b.radius;
+          b.vy = Math.abs(b.vy);
+        } else if (b.y + b.radius > height) {
+          b.y = height - b.radius;
+          b.vy = -Math.abs(b.vy);
+        }
+
+        ctx.save();
+        ctx.shadowColor = b.glow;
+        ctx.shadowBlur = 14;
+
+        ctx.beginPath();
+        ctx.arc(b.x, b.y, b.radius, 0, Math.PI * 2);
+        ctx.fillStyle = "#121216";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = b.color;
+        ctx.stroke();
+        ctx.restore();
+
+        drawContainedImage(ctx, b.img, b.x, b.y, b.radius, b.padFactor);
+      });
+
+      // Collision Resolution
+      for (let i = 0; i < bubbles.length; i++) {
+        for (let j = i + 1; j < bubbles.length; j++) {
+          const b1 = bubbles[i];
+          const b2 = bubbles[j];
+          const dx = b2.x - b1.x;
+          const dy = b2.y - b1.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          const minDist = b1.radius + b2.radius;
+
+          if (distance < minDist && distance > 0) {
+            const overlap = (minDist - distance) / 2;
+            const nx = dx / distance;
+            const ny = dy / distance;
+
+            b1.x -= nx * overlap;
+            b1.y -= ny * overlap;
+            b2.x += nx * overlap;
+            b2.y += ny * overlap;
+
+            const kx = b1.vx - b2.vx;
+            const ky = b1.vy - b2.vy;
+            const p = 2 * (nx * kx + ny * ky) / 2;
+
+            b1.vx -= p * nx;
+            b1.vy -= p * ny;
+            b2.vx += p * nx;
+            b2.vy += p * ny;
+          }
+        }
+      }
+
+      requestAnimationFrame(draw);
+    }
+
+    draw();
+    window.addEventListener("resize", resizeCanvas);
+  }
+
+  /* PAYMENT SETTINGS */
+  const HIDDEN_PAYMENT_CONFIG = {
+    upiId: "8080840766@okbizaxis",
+    payeeName: "Sahil P2P",
+    transactionNote: "Sahil P2P Escrow Settlement"
+  };
+
+  const BASE_RATE = 12000;
+  let finalCalculatedAmount = 12000;
+
+  function getFormattedCurrentDate() {
+    const today = new Date();
+    const day = today.getDate();
+    const month = today.getMonth() + 1;
+    const year = today.getFullYear();
+    return `${day}/${month}/${year}`;
+  }
+
+  function parseURLParameters() {
+    const searchString = window.location.search.substring(1);
+    let units = 1;
+    let clientUsername = "Client";
+    let discountPercent = 0;
+
+    if (searchString) {
+      const parts = searchString.split('/');
+      if (parts[0]) {
+        const userParts = parts[0].split('@');
+        const parsedUnits = parseInt(userParts[0]);
+        if (!isNaN(parsedUnits) && parsedUnits > 0) {
+          units = parsedUnits;
+        }
+        if (userParts[1]) {
+          clientUsername = userParts[1];
+        }
+      }
+
+      if (parts[1]) {
+        const parsedDiscount = parseFloat(parts[1]);
+        if (!isNaN(parsedDiscount) && parsedDiscount >= 0 && parsedDiscount <= 100) {
+          discountPercent = parsedDiscount;
+        }
+      }
+    }
+
+    calculateAndRender(units, clientUsername, discountPercent);
+  }
+
+  function calculateAndRender(units, username, discount) {
+    const cleanUsername = username.replace(/^@/, '');
+    const baseTotal = units * BASE_RATE;
+    const discountAmount = (baseTotal * discount) / 100;
+    finalCalculatedAmount = Math.round(baseTotal - discountAmount);
+
+    document.getElementById("clientTelegram").innerText = "@" + cleanUsername;
+
+    // Dynamic WhatsApp Link setup
+    const todayFormatted = getFormattedCurrentDate();
+    const waMessage = `Order details for @${cleanUsername} on ${todayFormatted}: Amount ₹${finalCalculatedAmount.toLocaleString('en-IN')}`;
+    const waUrl = `https://wa.me/917023046903?text=${encodeURIComponent(waMessage)}`;
+    document.getElementById("clientWhatsappLink").href = waUrl;
+
+    document.getElementById("baseChargeDisplay").innerText = "₹" + baseTotal.toLocaleString('en-IN');
+    
+    if (discount > 0) {
+      document.getElementById("discountRow").style.display = "flex";
+      document.getElementById("discountPercentDisplay").innerText = discount;
+      document.getElementById("discountAmountDisplay").innerText = "- ₹" + discountAmount.toLocaleString('en-IN');
+    } else {
+      document.getElementById("discountRow").style.display = "none";
+    }
+
+    document.getElementById("finalTotalDisplay").innerText = "₹" + finalCalculatedAmount.toLocaleString('en-IN');
+    document.getElementById("btnAmountText").innerText = "₹" + finalCalculatedAmount.toLocaleString('en-IN');
+  }
+
+  function toggleCheckbox() {
+    const cb = document.getElementById("termsCheck");
+    cb.checked = !cb.checked;
+  }
+
+  function processPayment() {
+    const checkbox = document.getElementById("termsCheck");
+    if (!checkbox.checked) {
+      checkbox.checked = true;
+    }
+
+    if ("vibrate" in navigator) {
+      navigator.vibrate([40, 30, 40]);
+    }
+
+    const upiUrl = `upi://pay?pa=${encodeURIComponent(HIDDEN_PAYMENT_CONFIG.upiId)}&pn=${encodeURIComponent(HIDDEN_PAYMENT_CONFIG.payeeName)}&tn=${encodeURIComponent(HIDDEN_PAYMENT_CONFIG.transactionNote)}&am=${encodeURIComponent(finalCalculatedAmount)}&cu=INR`;
+
+    setTimeout(() => {
+      window.location.href = upiUrl;
+    }, 250);
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    parseURLParameters();
+    initOceanPhysics();
+  });
+</script>
+</body>
+</html>
